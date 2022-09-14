@@ -1,0 +1,15 @@
+import java.math.BigDecimal;
+import java.math.RoundingMode;
+import java.util.Scanner;
+
+class CalculateBitcoin {
+    public static void main(String[] args) {
+        System.out.println("What is Bitcoin price today?");
+        Scanner scan = new Scanner(System.in);
+        BigDecimal btcPrice = scan.nextBigDecimal();
+        System.out.println("How much $ do you have?");
+        BigDecimal dollarsAmount = scan.nextBigDecimal();
+        BigDecimal btcAmount = dollarsAmount.divide(btcPrice, 7, RoundingMode.HALF_UP);
+        System.out.println("You can buy " + btcAmount + " BTC");
+    }
+}
